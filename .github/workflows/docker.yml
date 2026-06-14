@@ -6,7 +6,7 @@ on:
 
 env:
   IMAGE_NAME_HUB: thetipo01/godave-musl
-  IMAGE_NAME_GHCR: ghcr.io/${{ github.repository }}
+  IMAGE_NAME_GHCR: ghcr.io/thetipo01/godave-musl
 
 jobs:
   build:
