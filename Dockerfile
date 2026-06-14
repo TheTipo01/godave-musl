@@ -5,11 +5,11 @@ RUN --mount=type=cache,target=/var/cache/apk \
     apk add --no-cache build-base cmake ninja zip unzip curl git pkgconfig perl nasm ccache
 
 ENV VCPKG_FORCE_SYSTEM_BINARIES=1
-ENV CC=/usr/bin/gcc CXX=/usr/bin/g++
+ENV CC=/usr/local/bin/gcc CXX=/usr/local/bin/g++
 ENV CXXFLAGS="-Wno-error=maybe-uninitialized"
 ENV SHELL=/bin/sh
 
-RUN ln -s ccache /usr/local/bin/gcc && ln -s ccache /usr/local/bin/g++ && ln -s ccache /usr/local/bin/cc && ln -s ccache /usr/local/bin/c++
+RUN ln -s /usr/bin/ccache /usr/local/bin/gcc && ln -s /usr/bin/ccache /usr/local/bin/g++ && ln -s /usr/bin/ccache /usr/local/bin/cc && ln -s /usr/bin/ccache /usr/local/bin/c++
 ENV CCACHE_DIR=/ccache
 
 WORKDIR /root
