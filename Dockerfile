@@ -22,4 +22,4 @@ RUN --mount=type=cache,target=/ccache \
 ENV PKG_CONFIG_PATH="/root/.local/lib/pkgconfig"
 
 FROM scratch
-COPY --from=build /root/.local/lib/pkgconfig /root/.local/lib/pkgconfig
+COPY --from=build /root/.local /root/.local
