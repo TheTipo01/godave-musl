@@ -1,4 +1,4 @@
-FROM golang:alpine AS build
+FROM golang:alpine3.20 AS build
 
 RUN --mount=type=cache,target=/var/cache/apk \
     ln -s /var/cache/apk /etc/apk/cache && \
