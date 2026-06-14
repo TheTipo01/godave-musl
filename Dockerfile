@@ -20,3 +20,6 @@ RUN --mount=type=cache,target=/ccache \
     FORCE_BUILD=1 ./libdave_install.sh v1.1.0
 
 ENV PKG_CONFIG_PATH="/root/.local/lib/pkgconfig"
+
+FROM scratch
+COPY --from=build /root/.local/lib/pkgconfig /root/.local/lib/pkgconfig
