@@ -1,9 +1,10 @@
-FROM golang:alpine3.24 AS build
+FROM golang:alpine AS build
 
 RUN --mount=type=cache,target=/var/cache/apk \
     ln -s /var/cache/apk /etc/apk/cache && \
     apk add build-base cmake ninja zip unzip curl git pkgconfig perl nasm ccache
 
+ENV CMAKE_POLICY_VERSION_MINIMUM=3.5
 ENV VCPKG_FORCE_SYSTEM_BINARIES=1
 ENV CC=/usr/local/bin/gcc CXX=/usr/local/bin/g++
 ENV CXXFLAGS="-Wno-error=maybe-uninitialized"
